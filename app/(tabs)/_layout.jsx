@@ -2,23 +2,28 @@ import { View, Text, Image } from "react-native";
 import { Tabs, Redirect } from "expo-router";
 import React from "react";
 import icons from "../../constants/icons";
+import { StatusBar } from "expo-status-bar";
 
 const TabIcon = ({ icon, name, color, focused }) => {
   return (
-    <View className="items-center justify-center gap-1">
-      <Image
-        source={icon}
-        resizeMode="contain"
-        tintColor={color}
-        className="w-6 h-6"
-      />
-      <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
-      >
-        {name}
-      </Text>
-    </View>
+    <>
+      <View className="items-center justify-center gap-1">
+        <Image
+          source={icon}
+          resizeMode="contain"
+          tintColor={color}
+          className="w-6 h-6"
+        />
+        <Text
+          className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+          style={{ color: color }}
+        >
+          {name}
+        </Text>
+      </View>
+      <StatusBar backgroundColor="#161622" style="light" />
+    </>
+    
   );
 };
 
